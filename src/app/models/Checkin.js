@@ -1,8 +1,8 @@
-import Model from "sequelize";
+import { Model } from "sequelize";
 
 class Checkin extends Model {
   static init(sequelize) {
-    super.init(sequelize);
+    super.init({}, { sequelize });
 
     return this;
   }

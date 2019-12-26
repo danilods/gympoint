@@ -1,6 +1,6 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable("enrollments", {
+    return queryInterface.createTable("enrollment", {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -10,14 +10,14 @@ module.exports = {
 
       student_id: {
         type: Sequelize.INTEGER,
-        references: { model: "students", key: "id" },
+        references: { model: "student", key: "id" },
         onUpdate: "CASCADE",
         onDelete: "SET NULL",
         allowNull: true
       },
       plan_id: {
         type: Sequelize.INTEGER,
-        references: { model: "plans", key: "id" },
+        references: { model: "plan", key: "id" },
         onUpdate: "CASCADE",
         onDelete: "SET NULL",
         allowNull: true
